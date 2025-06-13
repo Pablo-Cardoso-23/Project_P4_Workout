@@ -49,16 +49,13 @@
 
                 font-size: 1.2rem;
                 font-weight: bold;
-            }
-
-            .info .treino {
-
-                font-size: 0.9rem;
+                margin-top: 15px;
             }
 
             .status {
 
                 text-align: center;
+                font-weight: bold;
             }
 
             .status .icon {
@@ -116,7 +113,8 @@
             .menu {
 
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
+                gap: 25px;
                 padding: 0.8rem 0;
                 background-color: #fff;
                 border-radius: 1rem;
@@ -126,6 +124,37 @@
             .menu img {
 
                 width: 30px;
+            }
+
+            .register-training {
+
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .registro-btn {
+
+                background-color: #fff;
+                color: #000000;
+                border: none;
+                padding: 0.1rem 0.4rem;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            .icon-treino {
+
+                width: 35px;
+                margin-right: 5px;
+            }
+
+            .logout a {
+
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 3px 10px;
             }
 
         </style>
@@ -140,14 +169,26 @@
 
                 <div class="info">
 
-                    <p class="dia">QUI</p>
-                    <p class="treino">TREINO DE <br><strong>COSTAS</strong></p>
+                    <p class="dia">{{diaAtual}}</p>
 
                 </div>
 
                 <div class="status">
-                    <img src="" alt="icone de treino" class="icon">
-                    <span class="dias">4/5</span>
+                    
+                    <span class="dias">Treinos Realizados: {{treinosRealizados}}</span>
+                </div>
+
+                <div class="logout">
+
+                    <a href="/logout">Sair</a>
+                </div>
+
+                <div class="register-training">
+
+                    <form action="/treino/fazer" method="POST">
+
+                        <button type="submit" class="registro-btn" style="font-size: 1rem">Registrar Treino</button>
+                    </form>
                 </div>
 
             </header>
@@ -159,23 +200,20 @@
                 <div class="icons">
 
                     <div class="icon-box">
-
-                        <img src="" alt="Montar Treino" > <a href="#"></a>
-                        <span>Montar<br>Treino</span>
-
-                    </div>
-
-                    <div class="icon-box">
-
-                        <img src="" alt="Consultar Treino" > <a href="#"></a>
-                        <span>Consultar<br>Treino</span>
+                        
+                        <a href="/treinos/montar">
+                            <img src="/img/calendario.png" alt="Montar Treino" > <a href="#"></a>
+                            <span>Montar<br>Treino</span>
+                        </a>
 
                     </div>
 
                     <div class="icon-box">
 
-                        <img src="" alt="Solicitar Treino" > <a href="#"></a>
-                        <span>Solicitar<br>Treino</span>
+                        <a href="/treinos/consultar">
+                            <img src="/img/metas.png" alt="Consultar Treino" > <a href="#"></a>
+                            <span>Consultar<br>Treino</span>
+                        </a>
 
                     </div>
 
@@ -190,22 +228,21 @@
 
                     <div class="icon-box">
 
-                        <img src="" alt="Montar Rotina" > <a href="#"></a>
-                        <span>Montar<br>Rotina</span>
+                        <a href="/rotina/montar">
+                            <img src="/img/rotina.png" alt="Montar Rotina" > <a href="#"></a>
+                            <span>Montar<br>Rotina</span>
+                        </a>
 
                     </div>
 
                     <div class="icon-box">
 
-                        <img src="" alt="Consultar Rotina" > <a href="#"></a>
-                        <span>Consultar<br>Rotina</span>
+                        <a href="/rotina/consultar">
+                            <img src="/img/consultarRotina.png" alt="Consultar Rotina" > <a href="#"></a>
+                            <span>Consultar<br>Rotina</span>
+                        </a>
 
                     </div>
-
-                    <div class="icon-box">
-
-                        <img src="" alt="Agendar Consulta" > <a href="#"></a>
-                        <span>Agendar<br>Consulta</span>
 
                 </div>
 
@@ -213,9 +250,8 @@
 
             <footer class="menu">
 
-                <img src="" alt="Home">
-                <img src="" alt="Chat">
-                <img src="" alt="Perfl">
+                <img src="/img/home.png" alt="Home">
+                <img src="/img/relatorio.png" alt="Perfil">
                 
             </footer>
 
